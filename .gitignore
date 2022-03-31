@@ -3,4 +3,4 @@ dist
 package-lock.json
 yarn.lock
 node
-src/test.js
+src/test.ts
