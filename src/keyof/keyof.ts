@@ -1,3 +1,4 @@
+// https://blog.devgenius.io/how-to-use-the-keyof-type-operator-in-typescript-6d5e0ea6740f
 export {};
 
 type User = {
