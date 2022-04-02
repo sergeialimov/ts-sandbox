@@ -1,9 +1,8 @@
-// What is the inferred type of scores?
-
 function merge<Names extends string[], Scores extends number[]>(
-  names: Names,
-  scores: Scores,
-): (number | string)[] {
+  names: [...Names],
+  scores: [...Scores],
+): ['a', 'b', 1, 2] {
+  // return ['a', 'b', 1, 2];
   return [...names, ...scores];
 }
 
