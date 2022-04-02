@@ -5,3 +5,4 @@ yarn.lock
 node
 src/test.ts
 **/*.js
+.vscode
