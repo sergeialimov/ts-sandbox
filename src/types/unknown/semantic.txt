@@ -1,0 +1,15 @@
+they are different in semantics.
+
+`unknown` is the parent type of all other types. it's a regular type in the type system.
+
+`any` means "turn off the type check". it's kind of meta programming.
+
+
+
+"meta programming" means the word "any" is not the content being compiled,
+that's to say, it doesn't tell the compiler what to be compiled.
+Instead, it configures the process of compilation, that's to say,
+it tells the compiler how to compile
+
+
+https://stackoverflow.com/questions/51439843/unknown-vs-any
