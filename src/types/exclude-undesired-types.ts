@@ -11,7 +11,7 @@ type C = NonNullable<undefined>;
 
 const tmp: A = true;
 const tmp2: B = undefined;
-const tmp3: C = undefined;  // Type 'undefined' is not assignable to type 'never'.
+const tmp3: C = undefined; // Type 'undefined' is not assignable to type 'never'.
 
 console.log(tmp);
 console.log(tmp2);
