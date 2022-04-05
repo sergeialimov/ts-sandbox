@@ -2,7 +2,8 @@ function testGen<T>(name: T): T {
   return name;
 }
 
-const res = testGen<string>('john');
+// const res = testGen<string>('john');
+const res = testGen('john'); // works too
 
 console.log('-- ', res);
 
@@ -10,5 +11,5 @@ function identity<Type>(arg: Type): Type {
   return arg;
 }
 
-let output = identity<string>("myString");
+const output = identity<string>('myString');
 console.log('-- ', output);

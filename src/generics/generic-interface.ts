@@ -8,4 +8,4 @@ const myIdentity: <T>(arg: T) => T = identity;
 
 const res = myIdentity<string>('test');
 
-console.log('-- ', res);
+console.log(res);
