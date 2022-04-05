@@ -3,19 +3,20 @@ type Email = {
 };
 
 type Name = {
-  name: string;
+  name: string | number;
+  phoneNumber: boolean; // That would tranform type Contact = never
 };
 
 type PhoneNumber = {
+  name: number;
   phoneNumber: number;
 };
-
 type Contact = Name & PhoneNumber & Email;
 
 const contact: Contact = {
   emailAddress: 'emailAddress',
   name: 'name',
-  phoneNumber: 123,
+  phoneNumber: 133,
 };
 
 console.log(contact);
