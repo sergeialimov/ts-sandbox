@@ -9,14 +9,14 @@ type Name = {
 
 type PhoneNumber = {
   name: number;
-  phoneNumber: number;
+  phoneNumber: number | boolean;
 };
 type Contact = Name & PhoneNumber & Email;
 
 const contact: Contact = {
   emailAddress: 'emailAddress',
-  name: 'name',
-  phoneNumber: 133,
+  name: 122,
+  phoneNumber: true,
 };
 
 console.log(contact);
