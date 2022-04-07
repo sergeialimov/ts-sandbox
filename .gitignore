@@ -3,6 +3,5 @@ dist
 package-lock.json
 yarn.lock
 node
-src/test.ts
 **/*.js
 .vscode
