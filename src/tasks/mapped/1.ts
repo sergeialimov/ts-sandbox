@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 // How can we remove the type annotations from the savingAction and savedAction
 // variables but maintain strong typing.
 

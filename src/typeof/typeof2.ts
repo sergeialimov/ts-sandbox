@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 // type ContactDetails = {
 //   name: string;
 //   email: string;

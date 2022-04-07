@@ -17,7 +17,9 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-unused-expressions': [2, { allowShortCircuit: true }],
-    'no-multiple-empty-lines': [2, { max: 2 }],
+    'no-multiple-empty-lines': [2, { max: 3 }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['off'],
   },
   overrides: [
     {

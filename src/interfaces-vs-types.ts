@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 export {};
 
 // https://learntypescript.dev/04/l7-interfaces-v-type-aliases

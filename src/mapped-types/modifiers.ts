@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 type Type = {
   [K in readonly 'apple' | 'orange' ]? : string
 };
