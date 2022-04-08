@@ -1,4 +1,3 @@
-// extend smth
 type T1 = {
   name: string,
 };
