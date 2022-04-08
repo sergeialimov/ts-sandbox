@@ -5,3 +5,4 @@ yarn.lock
 node
 **/*.js
 .vscode
+vocabulary.txt
