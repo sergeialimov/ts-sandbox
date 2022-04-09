@@ -4,26 +4,26 @@
  * from the type passed into it.
  */
 
-
 // The type will take in a parameter for the object type, T, and the keys to include, K.
 // The keys to include must be keys within T
 
 // T – object type – Object
 // K - keys to include – Union
 
-// What type should those keys have? Let's assign any, as it's not specified
+// type ObjectWithKeys<T, K extends keyof T> = {
+//   [ P in K ]: T[P];
+// };
 
-// K extends keyof T – what does this mean
+// This is the same type as a standard utility type called Pick.
 
-// Try to release it
-type Creator<T, K extends keyof T> = in K { T[K]: any };
-
-type Initial = {
-  name: string,
-  age: number,
+type ObjectWithKeys<T, K extends keyof T> = {
+  [P in K]: T[P];
 };
 
-type Keys = keyof Initial;
+const person = {
+  name: 'Fred',
+  age: 30,
+  email: 'fred@somewhere.com',
+};
 
-
-type NewType = Creator<{}, Keys>;
+type Contact = ObjectWithKeys<typeof person, 'name' | 'email'>;
