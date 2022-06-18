@@ -1,14 +1,6 @@
-import fs = require('fs');
-
-type User = {
-  id: string,
-  name: string
-};
-
-type UserRegistrationInfo = {
-  userId: string,
-  registrationDate: Date
-};
+import fs from 'fs';
+import { User, UserRegistrationInfo } from './types';
+import DbService from './db.service';
 
 export default class CsvUserReportGenerator {
   static exportUsersToCSV(filePath: string, nameFilter: string) {
@@ -20,13 +12,13 @@ export default class CsvUserReportGenerator {
 
     const nameRegex = new RegExp(nameFilter);
 
-    const users = await this.getUsersFromDB()
+    const users = await DbService.getUsersFromDB()
       .filter((u) => nameRegex.test(u.name));
 
     const userIds = users
       .map((u) => u.id);
 
-    const registrationInfo = this.getUsersRegistrationInfo(userIds);
+    const registrationInfo = await DbService.getUsersRegistrationInfo(userIds);
 
     for (const user of users) {
       result += user.name;
@@ -36,15 +28,5 @@ export default class CsvUserReportGenerator {
     }
 
     return result;
-  }
-
-  static async getUsersFromDB() : User[] {
-    // stub, gets users from DB
-    return [];
-  }
-
-  static async getUsersRegistrationInfo(userIds: string[]) : UserRegistrationInfo[] {
-    // stub, gets users registration info from external service
-    return [];
   }
 }

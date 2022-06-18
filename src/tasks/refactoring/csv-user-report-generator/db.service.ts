@@ -1,6 +1,6 @@
 // where is a connection to the db?
 
-class DbService {
+export default class DbService {
   static async getUsersFromDB() : User[] {
     // stub, gets users from DB
     return [];
