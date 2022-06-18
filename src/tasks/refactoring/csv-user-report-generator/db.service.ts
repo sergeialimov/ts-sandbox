@@ -1,8 +1,10 @@
 // where is a connection to the db?
 
 export default class DbService {
-  static async getUsersFromDB() : User[] {
+  static async getUsersIdsFromDB(nameRegex: string) : User[] {
+    // repace with orm param or sql query – .filter((u) => nameRegex.test(u.name));
     // stub, gets users from DB
+    // return ids
     return [];
   }
 
