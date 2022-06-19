@@ -7,18 +7,17 @@ export default class CsvUserReportGenerator {
     fs.writeFileSync(filePath, await this.getUsersCsv(nameFilter));
   }
 
-  async getUsersCsv(nameFilter: string) {
+  static async getUsersCsv(nameFilter: string) {
     let result = '';
 
-    const nameRegex = new RegExp(nameFilter);
-
-    const users = await DbService.getUsersIdsFromDB(nameRegex);
+    const users = await DbService.getUsersIdsFromDB(nameFilter);
 
     const registrationInfo = await DbService.getUsersRegistrationInfo(userIds);
 
     users.forEach((user) => {
       result += user.name;
       result += ';';
+      // TODO: refactor
       result += registrationInfo.find((r) => r.userId === user.id).registrationDate;
       result += '\n';
     });
