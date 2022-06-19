@@ -28,4 +28,5 @@ export default class CsvUserReportGenerator {
   }
 }
 
+// Test invokation
 CsvUserReportGenerator.exportUsersToCSV('path', 'name');
