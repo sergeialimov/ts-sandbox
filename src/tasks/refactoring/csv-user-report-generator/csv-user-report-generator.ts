@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { User, UserRegistrationInfo } from './types';
 import DbService from './db.service';
+import ExternalService from './external.service';
 
 export default class CsvUserReportGenerator {
   static async exportUsersToCSV(filePath: string, nameFilter: string) {
@@ -14,7 +15,7 @@ export default class CsvUserReportGenerator {
 
     const usersIds = users.map((user) => user.id);
 
-    const registrationInfo = await DbService.getUsersRegistrationInfo(usersIds);
+    const registrationInfo = await ExternalService.getUsersRegistrationInfo(usersIds);
 
     users.forEach((user) => {
       result += user.name;
