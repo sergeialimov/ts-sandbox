@@ -10,9 +10,9 @@ export default class CsvUserReportGenerator {
   static async getUsersCsv(nameFilter: string) {
     let result = '';
 
-    const users = await DbService.getUsersIdsFromDB(nameFilter);
+    const usersIds = await DbService.getUsersIdsFromDB(nameFilter);
 
-    const registrationInfo = await DbService.getUsersRegistrationInfo(userIds);
+    const registrationInfo = await DbService.getUsersRegistrationInfo(usersIds);
 
     users.forEach((user) => {
       result += user.name;
@@ -25,3 +25,5 @@ export default class CsvUserReportGenerator {
     return result;
   }
 }
+
+CsvUserReportGenerator.exportUsersToCSV('path', 'name');
