@@ -10,14 +10,15 @@ export default class CsvUserReportGenerator {
   static async getUsersCsv(nameFilter: string) {
     let result = '';
 
-    const usersIds = await DbService.getUsersIdsFromDB(nameFilter);
+    const users = await DbService.getUsersFromDB(nameFilter);
+
+    const usersIds = users.map((user) => user.id);
 
     const registrationInfo = await DbService.getUsersRegistrationInfo(usersIds);
 
     users.forEach((user) => {
       result += user.name;
       result += ';';
-      // TODO: refactor
       result += registrationInfo.find((r) => r.userId === user.id).registrationDate;
       result += '\n';
     });
